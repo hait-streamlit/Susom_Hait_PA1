@@ -137,6 +137,7 @@ class GUI:
                 
                 count += 1
                 self.board.pyplot(self.fig)
+                self.status.progress(count / total_frames)
             time.sleep(self.animation_speed)
 
     # reconstructs the optimal path
@@ -234,6 +235,7 @@ class GUI:
         self.board = st.pyplot(self.fig)
         self.fetch_board_data()
 
+        self.status = st.empty()
         if st.button("Play"):
             try:
                 self.get_play_data()
